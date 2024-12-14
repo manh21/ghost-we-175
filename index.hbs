@@ -1,20 +1,193 @@
 {{!< default}}
-<div class="gh-page">
-    <div class="gh-container">
+<div class="flex flex-col justify-evenly justify-items-end relative w-full md:h-screen h-[1300px] bg-cover bg-center" style="top: -50px; background-image: url('{{asset 'images/home_banner.png'}}');">
+    <section class="container pl-8 pr-8 self-center grow" style="max-width: 1000px;">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative z-10 flex items-end justify-center h-full pl-8 pr-8">
+            <div class="text-left text-white" style="margin-bottom: 150px">
+                <h1 class="md:text-5xl text-4xl font-bold">Menyediakan tenaga kerja terbaik, setiap saat!!</h1>
+                <p class="mt-4 text-lg font-semibold leading-loose md:line-clamp-6 line-clamp-2">
+                    API adalah mitra terbaik Anda dalam menemukan tenaga kerja berkualitas yang sesuai kebutuhan. Kami menyediakan layanan yang didukung oleh tenaga kerja terlatih, profesional, dan dipilih melalui proses seleksi ketat untuk menjamin kepercayaan dan keamanan Anda.
+                    <br><br>Konsultasikan kebutuhan Anda sekarang, karena kami ada untuk membantu Anda menemukan pekerja terbaik yang siap memberikan kontribusi nyata.
+                </p>
+                <a target="_blank" href="https://api.whatsapp.com/send?phone=6285777766896&text=Halo%2C%20saya%20tertarik%20untuk%20mengetahui%20lebih%20lanjut%20mengenai%20layanan%20dari%20Agen%20Pekerja%20Indonesia%20(API).%20Bisa%20bantu%20saya%20untuk%20konsultasi%20lebih%20lanjut%3F%C2%A0Terima%C2%A0kasih." class="cta-wa mt-8 inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700">
+                    Konsultasikan <span class="font-bold text-xl italic hover:not-italic"> GRATIS </span>
+                    </a>
+            </div>
+        </div>
+    </section>
 
-        <div class="gh-postfeed">
-        {{#foreach posts}}
+    <section class="z-10">
+        <div class="shadow-lg flex flex-col md:flex-row items-stretch justify-center w-full md:w-[80%] lg:w-[60%]">
+            <div class="flex md:flex-row flex-col items-center bg-cyan-400 w-full">
+                <div class="flex flex-col m-8 text-white text-left">
+                    <h3 class="text-xl font-bold">Terpercaya</h3>
+                    <p class="text-lg">Semua tenaga kerja memiliki rekam jejak bersih.</p>
+                </div>
+            </div>
+            <div class="flex md:flex-row flex-col items-center bg-sky-400 w-full">
+                <div class="flex flex-col m-8 text-white text-left">
+                    <h3 class="text-xl font-bold">Customizable</h3>
+                    <p class="text-lg">Pilihan tenaga kerja disesuaikan dengan kebutuhan klien.</p>
+                </div>
+            </div>
+            <div class="flex md:flex-row flex-col items-center bg-blue-500 w-full">
+                <div class="flex flex-col m-8 text-white text-left">
+                    <h3 class="text-xl font-bold">Garansi</h3>
+                    <p class="text-lg">Penggantian tenaga kerja tanpa biaya tambahan selama periode tertentu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
 
-            {{> "card" page=../pagination.page }} {{!-- partials/card.hbs --}}
+<section class="flex md:flex-row flex-col w-full min-h-screen container mx-auto justify-center overflow-hidden" style="max-width: 1200px">
+    <div class="flex flex-col lg:mt-[80px]">
+        <div class="p-8">
+            <h4 class="text-2xl font-bold">Kualitas dan Kredibilitas SDM</h4>
+            <div class="text-semibold text-xl leading-loose">
+                <ul class="list-disc ml-6 space-y-2">
+                    <li class="text-gray-700 text-justify">Pekerja Anda dipilih melalui seleksi ketat (background check, tidak ada riwayat pidana, rajin, cekatan, dan inisiatif).</li>
+                    <li class="text-gray-700 text-justify">Sistem pelatihan untuk memastikan tenaga kerja memahami standar profesional sebelum dipekerjakan.</li>
+                    <li class="text-gray-700 text-justify">Jaminan "tenaga kerja sesuai kebutuhan" dengan sesi konsultasi awal.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="p-8">
+            <h4 class="text-2xl font-bold">Garansi dan Kepercayaan</h4>
+            <div class="text-semibold text-xl leading-loose">
+                <ul class="list-disc ml-6 space-y-2">
+                    <li class="text-gray-700 text-justify">Pekerja Anda dipilih melalui seleksi ketat (background check, tidak ada riwayat pidana, rajin, cekatan, dan inisiatif).</li>
+                    <li class="text-gray-700 text-justify">Sistem pelatihan untuk memastikan tenaga kerja memahami standar profesional sebelum dipekerjakan.</li>
+                    <li class="text-gray-700 text-justify">Jaminan "tenaga kerja sesuai kebutuhan" dengan sesi konsultasi awal.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-        {{/foreach}}
+
+    <div class="flex flex-col">
+        <div class="p-8">
+            <h4 class="text-2xl font-bold">Pendekatan yang Personal dan Profesional</h4>
+            <div class="text-semibold text-xl leading-loose">
+                <ul class="list-disc ml-6 space-y-2">
+                    <li class="text-gray-700 text-justify">Konsultasi pra-penempatan untuk memastikan kebutuhan klien terpenuhi.</li>
+                    <li class="text-gray-700 text-justify">Penilaian langsung terhadap preferensi klien (misalnya: ingin ART yang bisa memasak, rajin, atau inisiatif).</li>
+                    <li class="text-gray-700 text-justify">Dokumentasi lengkap untuk setiap pekerja, termasuk identitas, dan rekam jejak yang di garansi.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="p-8">
+            <h4 class="text-2xl font-bold">Jasa Tambahan</h4>
+            <div class="text-semibold text-xl leading-loose">
+                <ul class="list-disc ml-6 space-y-2">
+                    <li class="text-gray-700 text-justify">Sertifikasi khusus untuk pekerja (misalnya: ART yang memiliki keahlian memasak atau mengasuh anak).</li>
+                    <li class="text-gray-700 text-justify">Layanan tenaga kerja terampil seperti terapis, perawatan lansia, atau tenaga operator pabrik.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex flex-col self-center">
+        <div class="p-8">
+            <img src="{{asset 'images/worker.png'}}" alt="Worker Image" class="rounded-t-full h-full object-cover mx-auto shadow-lg">
+        </div>
+    </div>
+</section>
+
+<section id="layanan" class="flex flex-col w-full h-full container mx-auto justify-center items-center overflow-hidden mt-[100px] mb-[100px]" style="max-width: 1200px">
+    <span class="uppercase font-semibold text-xl text-center">Yang terbaik untuk anda dan keluarga</span>
+    <h2 class="text-6xl mt-4 font-bold text-center">
+        Layanan yang kami tawarkan
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-[50px]">
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img src="{{ asset 'images/layanan1.png'}}" alt="Asisten Rumah Tangga (ART)" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">Asisten Rumah Tangga (ART)</h3>
+                <p class="text-gray-700 text-justify">Kami menyediakan tenaga kerja rumah tangga yang cekatan, rajin, dan penuh inisiatif, siap membantu Anda mengelola kebutuhan rumah tangga dengan efisien. API memastikan setiap ART yang kami tawarkan telah melalui proses seleksi ketat dan siap memberikan pelayanan terbaik bagi kenyamanan rumah Anda.</p>
+            </div>
+        </div>
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img src="{{ asset 'images/layanan2.png'}}" alt="Karyawan Pabrik" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">Karyawan Pabrik</h3>
+                <p class="text-gray-700 text-justify">API menawarkan solusi tenaga kerja industri yang andal dan terlatih untuk mendukung kelancaran operasional pabrik Anda. Kami memahami pentingnya pekerja yang terampil, produktif, dan dapat diandalkan untuk memenuhi tuntutan industri Anda dengan hasil yang maksimal.</p>
+            </div>
+        </div>
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img src="{{ asset 'images/layanan3.png'}}" alt="Perawat khusus lansia" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">Perawat khusus lansia</h3>
+                <p class="text-gray-700 text-justify">Menawarkan jasa perawatan lansia profesional yang penuh perhatian dan empati untuk mendukung kenyamanan dan kesehatan orang tua Anda.</p>
+            </div>
+        </div>
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img src="{{ asset 'images/layanan4.png'}}" alt="Jasa nany" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">Jasa nany</h3>
+                <p class="text-gray-700 text-justify">Menyediakan jasa nanny profesional yang siap membantu merawat anak Anda dengan penuh perhatian dan kasih sayang, solusi terpercaya untuk kebutuhan pengasuhan dengan pengalaman dalam mendampingi tumbuh kembang anak.</p>
+            </div>
+        </div>
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img src="{{ asset 'images/layanan5.png'}}" alt="Tenaga Lainnya" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">Tenaga Lainnya</h3>
+                <p class="text-gray-700 text-justify">API juga menyediakan tenaga kerja lainnya sesuai kebutuhan Anda, mulai dari operator, penjaga toko, hingga berbagai profesi lain yang dapat disesuaikan dengan permintaan spesifik. Kami siap membantu Anda menemukan pekerja yang tepat dengan kualitas dan profesionalisme yang terjamin.</p>
+            </div>
+        </div>
+    </div>
+
+    <a target="_blank" href="https://api.whatsapp.com/send?phone=6285777766896&text=Halo%2C%20saya%20tertarik%20untuk%20mengetahui%20lebih%20lanjut%20mengenai%20layanan%20dari%20Agen%20Pekerja%20Indonesia%20(API).%20Bisa%20bantu%20saya%20untuk%20konsultasi%20lebih%20lanjut%3F%C2%A0Terima%C2%A0kasih." class="cta-wa mt-8 inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700">
+        Pesan <span class="font-bold text-xl italic hover:not-italic"> Sekarang </span>
+    </a>
+</section>
+
+<section class="flex flex-col w-full h-full bg-cover bg-center relative" style="background-image: url('{{asset 'images/layanan4.png'}}');">
+    <div class="absolute inset-0 bg-black opacity-80 backdrop-blur-lg"></div>
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 h-full text-white text-center relative z-10" style="margin: 100px auto; max-width: 1200px">
+        <div class="text-left p-8">
+            <h2 class="text-4xl font-bold mb-4">API - Operasional dan Efisiensi</h2>
+            <p class="text-lg leading-loose max-w-2xl">
+                <ul class="list-disc ml-6 space-y-2">
+                    <li class="text-justify"><span class="font-bold">Sistem Database Pekerja:</span> Gunakan sistem terkomputerisasi untuk menyimpan data pekerja dan memudahkan pencocokan dengan klien.</li>
+                    <li class="text-justify"><span class="font-bold">Layanan Cepat dan Responsif:</span> Tanggapi permintaan klien dengan cepat, terutama dalam situasi mendesak.</li>
+                </ul>
+            </p>
+        </div>
+        <div class="text-left p-8">
+            <h2 class="text-4xl font-bold mb-4">Masalah yang API selesaikan untuk Anda</h2>
+            <p class="text-lg leading-loose max-w-2xl">
+                <ul class="list-disc ml-6 space-y-2">
+                    <li class="text-justify">Kesulitan klien mencari tenaga kerja berkualitas.</li>
+                    <li class="text-justify">Ketidaknyamanan menghadapi risiko seperti pekerja yang kurang rajin atau memiliki riwayat buruk.</li>
+                    <li class="text-justify">Minimnya garansi dari layanan serupa.</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="proses-pemesanan" class="flex flex-col w-full h-full container mx-auto justify-center items-center justify-center overflow-hidden mt-[100px] mb-[100px]" style="max-width: 1200px">
+        <h2 class="text-4xl mb-[100px] font-bold text-center">
+            Proses Pemesanan
+        </h2>
+        <div class="text-gray-700 text-justify p-4">
+            <div class="flex flex-col items-center justify-center mb-8">
+                <img src="{{asset 'images/step1.png'}}" alt="Step 1" class="w-[250px] mr-4 bg-cover">
+                <p class="text-lg font-semibold">Konsultasi awal untuk mengetahui kebutuhan klien.</p>
+            </div>
+            <div class="flex flex-col items-center justify-center mb-8">
+                <img src="{{asset 'images/step2.png'}}" alt="Step 2" class="w-[250px] mr-4 bg-cover">
+                <p class="text-lg font-semibold">Pemilihan tenaga kerja yang sesuai dengan kebutuhan.</p>
+            </div>
+            <div class="flex flex-col items-center justify-center mb-8">
+                <img src="{{asset 'images/step3.png'}}" alt="Step 3" class="w-[250px] mr-4 bg-cover">
+                <p class="text-lg font-semibold">Penempatan tenaga kerja dan pemantauan kinerja.</p>
+            </div>
         </div>
 
-        {{!-- If JS isn't enabled, fallback to standard pagination --}}
-        <noscript>
-            <div class="gh-pagination">
-                {{pagination}}
-            </div>
-        </noscript>
-    </div>
-</div>
+        <a target="_blank" href="https://api.whatsapp.com/send?phone=6285777766896&text=Halo%2C%20saya%20tertarik%20untuk%20mengetahui%20lebih%20lanjut%20mengenai%20layanan%20dari%20Agen%20Pekerja%20Indonesia%20(API).%20Bisa%20bantu%20saya%20untuk%20konsultasi%20lebih%20lanjut%3F%C2%A0Terima%C2%A0kasih." class="cta-wa mt-8 inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700">
+            Pesan <span class="font-bold text-xl italic hover:not-italic"> Sekarang </span>
+        </a>
+</section>

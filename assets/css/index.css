@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /*
 
 This is a development CSS file that is compiled to a minified
@@ -24,6 +28,10 @@ production stylesheet in assets/built/screen.css using: npm run dev
 @import "ghost/badge.css";
 @import "ghost/pagination.css";
 @import "ghost/comments.css";
+
+html {
+    scroll-behavior: smooth;
+}
 
 
 
@@ -254,5 +262,396 @@ html,
 @media (max-width: 700px) {
     .gh-author-meta {
         font-size: 1.6rem;
+    }
+}
+
+
+/* =============== GHOST COMPONENTS  =============== */
+
+/* Content grid
+/* ---------------------------------------------------------- */
+
+.gh-canvas,
+.kg-width-full.kg-content-wide {
+    --gap: 4vw;
+    --main: min(var(--content-width, 720px), 100% - var(--gap) * 2);
+    --wide: minmax(0, calc((var(--container-width, 1200px) - var(--content-width, 720px)) / 2));
+    --full: minmax(var(--gap), 1fr);
+}
+
+.kg-width-wide,
+.kg-content-wide > div {
+    grid-column: wide-start / wide-end;
+}
+
+.kg-width-full {
+    grid-column: full-start / full-end;
+}
+
+.kg-width-full img {
+    width: 100%;
+}
+
+
+/* Content & Typography
+/* ---------------------------------------------------------- */
+
+.gh-content > * + * {
+    margin-top: 4vmin;
+}
+
+.gh-content [id]:not(:first-child) {
+    margin: 1.5em 0 0;
+}
+
+.gh-content > [id] + * {
+    margin-top: 1.5rem;
+}
+
+.gh-content [id] + .kg-card,
+.gh-content blockquote + .kg-card {
+    margin-top: 6vmin;
+}
+
+.gh-canvas > blockquote,
+.gh-canvas > ol,
+.gh-canvas > ul,
+.gh-canvas > dl,
+.gh-canvas > p {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.6em;
+}
+
+.gh-content > ul,
+.gh-content > ol,
+.gh-content > dl {
+    padding-left: 1.9em;
+}
+
+.gh-content hr {
+    margin-top: 6vmin;
+}
+
+.gh-content hr + * {
+    margin-top: 6vmin !important;
+}
+
+.gh-content blockquote {
+    position: relative;
+    font-style: italic;
+}
+
+.gh-content blockquote::before {
+    content: "";
+    position: absolute;
+    left: -1.5em;
+    top: 0;
+    bottom: 0;
+    width: 0.3rem;
+    background: var(--color-primary);
+}
+
+@media (max-width: 650px) {
+    .gh-canvas blockquote,
+    .gh-canvas ol,
+    .gh-canvas ul,
+    .gh-canvas dl,
+    .gh-canvas p {
+        font-size: 0.8rem;
+    }
+
+    .gh-content blockquote::before {
+        left: -4vmin;
+    }
+}
+
+
+/* Cards
+/* ---------------------------------------------------------- */
+
+.gh-content :not(.kg-card):not([id]) + .kg-card {
+    margin-top: 6vmin;
+}
+
+.gh-content .kg-card + :not(.kg-card) {
+    margin-top: 6vmin;
+}
+
+figcaption {
+    padding: 1.5rem 1.5rem 0;
+    text-align: center;
+    color: rgba(0,0,0,0.5);
+    font-weight: 600;
+    font-size: 1.3rem;
+    line-height: 1.4em;
+}
+
+figcaption strong {
+    color: rgba(0,0,0,0.8);
+}
+
+.gh-canvas :not(pre) code {
+    vertical-align: middle;
+    padding: 0.15em 0.4em 0.15em;
+    border: #e1eaef 1px solid;
+    font-weight: 400 !important;
+    font-size: 0.9em;
+    line-height: 1em;
+    color: #dc0050;
+    background: #f0f6f9;
+    border-radius: 0.25em;
+}
+
+.gh-canvas > pre {
+    overflow: scroll;
+    padding: 16px 20px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 5px;
+    box-shadow: 0 2px 6px -2px rgba(0,0,0,.1), 0 0 1px rgba(0,0,0,.4);
+}
+
+.kg-embed-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Default to 16 / 9 aspect ratio for YouTube & Vimeo embeds  */
+.kg-embed-card > :where(iframe[src*="youtube.com"],iframe[src*="vimeo.com"]) {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
+
+.kg-image-card img {
+    margin: auto;
+}
+
+
+/* Card captions
+/* ---------------------------------------------------------- */
+
+.kg-width-full.kg-card-hascaption {
+    display: grid;
+    grid-template-columns: inherit;
+}
+
+.kg-width-wide.kg-card-hascaption img {
+    grid-column: wide-start / wide-end;
+}
+.kg-width-full.kg-card-hascaption img {
+    grid-column: 1 / -1;
+}
+
+.kg-width-full.kg-card-hascaption figcaption {
+    grid-column: main-start / main-end;
+}
+
+
+/* Tables
+/* ---------------------------------------------------------- */
+
+.gh-content table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.gh-content th {
+    padding: 0.5em 0.8em;
+    text-align: left;
+    font-size: .75em;
+    text-transform: uppercase;
+}
+
+.gh-content td {
+    padding: 0.4em 0.7em;
+}
+
+.gh-content tbody tr:nth-child(2n + 1) {
+    background-color: rgba(0,0,0,0.1);
+    padding: 1px;
+}
+
+.gh-content tbody tr:nth-child(2n + 2) td:last-child {
+    box-shadow:
+        inset 1px 0 rgba(0,0,0,0.1),
+        inset -1px 0 rgba(0,0,0,0.1);
+}
+
+.gh-content tbody tr:nth-child(2n + 2) td {
+    box-shadow: inset 1px 0 rgba(0,0,0,0.1);
+}
+
+.gh-content tbody tr:last-child {
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.gh-content p,
+.gh-content ul,
+.gh-content ol,
+.gh-content li,
+.gh-content dl,
+.gh-content dd,
+.gh-content hr,
+.gh-content pre,
+.gh-content form,
+.gh-content table,
+.gh-content video,
+.gh-content figure,
+.gh-content figcaption,
+.gh-content blockquote {
+    margin: 0;
+    padding: 0;
+}
+
+.gh-content ul[class],
+.gh-content ol[class] {
+    padding: 0;
+    list-style: none;
+}
+
+.gh-content img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.gh-content input,
+.gh-content button,
+.gh-content select,
+.gh-content textarea {
+    font: inherit;
+    -webkit-appearance: none;
+}
+
+.gh-content fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.gh-content label {
+    display: block;
+    font-size: 0.9em;
+    font-weight: 700;
+}
+
+.gh-content hr {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid currentcolor;
+    opacity: 0.2;
+}
+
+.gh-content ::selection {
+    text-shadow: none;
+    background: #cbeafb;
+}
+
+.gh-content mark {
+    background-color: #fdffb6;
+}
+
+.gh-content small {
+    font-size: 80%;
+}
+
+.gh-content sub,
+.gh-content sup {
+    position: relative;
+    font-size: 75%;
+    line-height: 0;
+    vertical-align: baseline;
+}
+.gh-content sup {
+    top: -0.5em;
+}
+.gh-content sub {
+    bottom: -0.25em;
+}
+
+.gh-content ul:not([class]) li + li {
+    margin-top: 0.6em;
+}
+
+.gh-content a:not([class]) {
+    color: var(--color-primary);
+    text-decoration-skip-ink: auto;
+}
+
+.gh-content [class] {
+    color: inherit;
+    text-decoration: none;
+    transition: 0.4s ease;
+}
+
+.gh-content a[class]:hover {
+    transition: 0.2s ease;
+}
+
+.gh-content h1,
+.gh-content h2,
+.gh-content h3,
+.gh-content h4,
+.gh-content h5,
+.gh-content h6 {
+    margin: 0;
+    line-height: 1.15em;
+    font-weight: 700;
+}
+
+.gh-content h1 {
+    font-size: 3.6rem;
+    letter-spacing: -0.5px;
+}
+@media (max-width: 500px) {
+    .gh-content h1 {
+        font-size: 1.7rem;
+    }
+}
+
+.gh-content h2 {
+    font-size: 2.6rem;
+}
+@media (max-width: 500px) {
+    .gh-content h2 {
+        font-size: 1.2rem;
+    }
+}
+
+.gh-content h3 {
+    font-size: 2.2rem;
+}
+@media (max-width: 500px) {
+    .gh-content h3 {
+        font-size: 0.8rem;
+    }
+}
+
+.gh-content h4 {
+    font-size: 1.6rem;
+}
+
+.gh-content h5 {
+    font-size: 1.4rem;
+}
+
+.gh-content h6 {
+    font-size: 1.2rem;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    .gh-content * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }

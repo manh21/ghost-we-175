@@ -1,22 +1,30 @@
 {{!< default}}
 
 {{#post}}
-<article class="gh-article {{post_class}}">
+
+{{#if feature_image}}
+<div class="flex flex-col w-full h-full bg-cover bg-center relative" style="top: -50px; background-image: url('{{feature_image}}');">
+    <div class="absolute inset-0 bg-black opacity-50 backdrop-blur-lg"></div>
+    <div style="margin: 150px 0px" class="z-10 w-full flex justify-center items-center"> 
+        <h1 class="text-white text-6xl font-bold">{{title}}</h1> 
+    </div>
+</div>
+{{else}}
+<div class="flex flex-col w-full h-full bg-cover bg-center relative" style="top: -50px; background-image: url('{{asset 'images/home_banner.png'}}');">
+    <div class="absolute inset-0 bg-black opacity-50 backdrop-blur-lg"></div>
+    <div style="margin: 150px 0px" class="z-10 w-full flex justify-center items-center"> 
+        <h1 class="text-white text-6xl font-bold">{{title}}</h1> 
+    </div>
+</div>
+{{/if}}
+
+<article class="gh-article {{post_class}} container mx-auto py-8 px-4 md:px-0" style="max-width: 1200px;">
     {{#match @page.show_title_and_feature_image}}
     <header class="gh-header gh-canvas">
-        <h1 class="gh-title">{{title}}</h1>
+        <h1 class="text-5xl font-bold mb-4">{{title}}</h1>
 
         {{#if custom_excerpt}}
-            <p class="gh-excerpt">{{custom_excerpt}}</p>
-        {{/if}}
-
-        {{#if feature_image}}
-            <figure class="gh-feature-image">
-                <img src="{{feature_image}}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" />
-                {{#if feature_image_caption}}
-                    <figcaption>{{feature_image_caption}}</figcaption>
-                {{/if}}
-            </figure>
+            <p class="text-lg text-gray-700 mb-4">{{custom_excerpt}}</p>
         {{/if}}
     </header>
     {{/match}}
